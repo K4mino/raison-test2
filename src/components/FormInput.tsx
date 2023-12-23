@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FormInput = ({value,onChange}) => {
+const FormInput: React.FC<{ value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }> = ({ value, onChange }) => {
     return (
         <label className="form-control">
             <div className="label">

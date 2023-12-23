@@ -6,7 +6,7 @@ import FormInput from '../components/FormInput'
 import FormCheckbox from '../components/FormCheckbox'
 import Header from '../components/Header'
 
-const LoginPage = () => {
+const LoginPage: React.FC<{ email: string; setEmail: (email: string) => void }> = () => {
     const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     const {email, setEmail}: {email: string, setEmail: (email: string) => void} = React.useContext(EmailContext)

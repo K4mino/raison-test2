@@ -5,7 +5,7 @@ import { EmailContext } from '../components/EmailContext'
 import Header from '../components/Header'
 import FormInput from '../components/FormInput'
 import Popup from '../components/Popup'
-const ConfirmPage = () => {
+const ConfirmPage: React.FC<{ email: string }> = () => {
  
   const history = useHistory()
   const {email}: {email: string} = React.useContext(EmailContext)
