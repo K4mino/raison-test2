@@ -5,10 +5,11 @@ import { EmailContext } from '../components/EmailContext'
 import Header from '../components/Header'
 import FormInput from '../components/FormInput'
 import Popup from '../components/Popup'
-const ConfirmPage: React.FC<{ email: string }> = () => {
+import { EmailContextType } from '../components/EmailContext'
+const ConfirmPage: React.FC = () => {
  
   const history = useHistory()
-  const {email}: {email: string} = React.useContext(EmailContext)
+  const { email }: { email: string } = React.useContext(EmailContext) as EmailContextType;
   const [isConfirmed, setIsConfirmed] = React.useState(false)
   const [postStatus, setPostStatus] = React.useState('Error')
 

@@ -6,11 +6,17 @@ import FormInput from '../components/FormInput'
 import FormCheckbox from '../components/FormCheckbox'
 import Header from '../components/Header'
 
-const LoginPage: React.FC<{ email: string; setEmail: (email: string) => void }> = () => {
+const LoginPage: React.FC = () => {
     const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-    const {email, setEmail}: {email: string, setEmail: (email: string) => void} = React.useContext(EmailContext)
-    const timerRef = React.useRef(null)
+    const contextValue = React.useContext(EmailContext);
+
+    if (contextValue === null) {
+      throw new Error('Email context value is null');
+    }
+    
+    const { email, setEmail }: { email: string; setEmail: (email: string) => void } = contextValue;
+    const timerRef:any = React.useRef(null)
     const [isEmailValid, setIsEmailValid] = React.useState(false)
     const [timer, setTimer] = React.useState(500)
     const [isChecked, setIsChecked] = React.useState(false)
