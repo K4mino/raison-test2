@@ -61,13 +61,17 @@ const LoginPage: React.FC = () => {
         setTimer(500)
     }
 
-    const handleTouchStart = () => {
+    const handleTouchStart = (e: React.TouchEvent) => {
+        e.preventDefault()
+
         timerRef.current = setInterval(() => {
             setTimer((prevTimer:number) => prevTimer - 10)
         }, 10)
     }
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (e: React.TouchEvent) => {
+      e.preventDefault()
+
         if (timer < 0 && isEmailValid && isChecked) {
             sessionStorage.setItem('email', email)
             history.push('/step2')
