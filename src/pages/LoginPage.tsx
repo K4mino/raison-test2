@@ -9,7 +9,7 @@ import Header from '../components/Header'
 const LoginPage = () => {
     const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-    const {email, setEmail} = React.useContext(EmailContext)
+    const {email, setEmail}: {email: string, setEmail: (email: string) => void} = React.useContext(EmailContext)
     const timerRef = React.useRef(null)
     const [isEmailValid, setIsEmailValid] = React.useState(false)
     const [timer, setTimer] = React.useState(500)

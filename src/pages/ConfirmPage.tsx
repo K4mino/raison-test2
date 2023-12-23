@@ -8,7 +8,7 @@ import Popup from '../components/Popup'
 const ConfirmPage = () => {
  
   const history = useHistory()
-  const {email} = React.useContext(EmailContext)
+  const {email}: {email: string} = React.useContext(EmailContext)
   const [isConfirmed, setIsConfirmed] = React.useState(false)
   const [postStatus, setPostStatus] = React.useState('Error')
 
